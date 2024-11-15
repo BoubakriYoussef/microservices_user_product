@@ -1,0 +1,19 @@
+server:
+  port: 8082 # Port unique pour le Order Service
+
+spring:
+  application:
+    name: order-service # Nom du service dans Eureka
+  datasource:
+    url: jdbc:mysql://localhost:3306/order_service # URL de connexion MySQL
+    username: root # Nom d'utilisateur MySQL
+    password: admin # Mot de passe MySQL
+  jpa:
+    hibernate:
+      ddl-auto: update # Permet à Hibernate de créer/mettre à jour les tables automatiquement
+    show-sql: true # Affiche les requêtes SQL dans la console
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/ # URL du serveur Eureka
